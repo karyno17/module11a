@@ -1,15 +1,18 @@
 <template>
   <div>
-    <h1>Random Joke</h1>
+    <h1>Here are Some Random Facts</h1>
     <button @click="getJoke">Tell Me a Joke!</button>
     <p v-if="joke">{{ joke }}</p>
     <p v-else>Click the button to get a joke!</p>
+    <GoBackButton />
   </div>
 </template>
 
 <script>
+import GoBackButton from './GoBackButton.vue'
+
 export default {
-  name: 'RandomJokes',
+  name: 'RandomFacts',
   data() {
     return {
       joke: ''
@@ -32,6 +35,9 @@ export default {
         console.error(error)
       }
     }
+  },
+  components: {
+    GoBackButton
   }
 }
 </script>
